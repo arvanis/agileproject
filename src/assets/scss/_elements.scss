@@ -1,4 +1,6 @@
 #home {
+    z-index: 9;
+
     @include min-screen($tablet-landscape) {
         display: block;
         position: fixed;
@@ -41,6 +43,7 @@
     bottom: 0;
     margin: auto;
     width: 310px;
+    z-index: 9;
 
 
     .workers-list__button {
@@ -88,7 +91,7 @@
 
         .menu__logo {
             width: 200px;
-            height: 30px;
+            height: 40px;
             margin: 5% 0;
 
             @include min-screen($tablet-landscape) {
@@ -111,6 +114,10 @@
     }
 }
 
+#tab_2, #tab_4 {
+    margin-top: 100px;
+}
+
 .search-title{
     text-transform: uppercase;
     font-weight: 100;
@@ -127,14 +134,6 @@
         justify-content: space-between;
         align-items: center;
 
-        .input__underline {
-            width: 200px;
-            background-color: #fafafa;
-            font-size:16px;
-            border:none;
-            border-bottom:1px solid #757575;
-        }
-
         select {
             margin: 20px 0 0;
         }
@@ -147,6 +146,7 @@
 }
 
 .profile {
+    position: relative;
     background-color: white;
     width: 300px;
     color: black;
@@ -175,4 +175,149 @@
 .role {
     color: #cb0043;
     font-size: 14px;
+}
+
+#toDo {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    li {
+        margin: 15px 0;
+        box-sizing: border-box;
+
+        &:hover {
+            box-shadow: 0 1px black;
+        }
+    }
+
+    li a {
+        color: black;
+        text-decoration: none;
+        font-size: 24px;
+    }
+}
+
+// Vendor gallery code
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+table {
+    td {
+        padding: 10px 0 10px 10px;
+    }
+}
+
+#tab_4 {
+    table {
+        margin-top: 20px;
+    }
+}
+
+.input__underline {
+    width: 200px;
+    background-color: #fafafa;
+    font-size:16px;
+    border:none;
+    border-bottom:1px solid #757575;
+}
+
+
+.addUser {
+    margin-top: 20px;
+    float: right;
+}
+
+#myModal {
+    z-index: 5;
+
+    @include min-screen($tablet-landscape) {
+        z-index: 10;
+    }
 }

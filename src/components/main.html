@@ -30,12 +30,12 @@
             <div>
                 <input type="text" name="firstname" class="input__underline">
                 <br>
-                <select name="job">
-                    <option value="s0"></option>
-                    <option value="s1">Developer</option>
-                    <option value="s2">Grafik</option>
-                    <option value="s3">Product Owner</option>
-                    <option value="s4">Scrum Master</option>
+                <select name="RoleId">
+                    <option value="1"></option>
+                    <option value="2">Developer</option>
+                    <option value="3">Grafik</option>
+                    <option value="4">Product Owner</option>
+                    <option value="5">Scrum Master</option>
                 </select>
             </div>
             <input type="image" src="assets/images/searchbtn.png" alt="Submit Form" class="submit"/>
@@ -46,17 +46,51 @@
 
 </section>
 <section id="tab_2" class="tabs">
-    <ul>
-
-    </ul>
+    <img id="myImg" src="assets/images/plan.png" alt="Plan budynku">
+    <div id="myModal" class="modal">
+        <span class="close">×</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
 </section>
 <section id="tab_3" class="tabs">
-    <ul>
-
+    <ul id="toDo">
+        <li><a href="http://dinner.xsolve.pl/" target="_blank">Obiady</a></li>
+        <li><a href="https://www.google.pl/search?q=formularz+zg%C5%82oszenia+przepalenia&rlz=1C5CHFA_enPL697PL697&oq=formularz+zg%C5%82oszenia+przepalenia&aqs=chrome..69i57.13652j0j1&sourceid=chrome&ie=UTF-8" target="_blank">Narzędzia</a></li>
+        <li><a href="https://www.google.pl/search?q=automatyczny+przepalacz+task%C3%B3w&rlz=1C5CHFA_enPL697PL697&oq=automatyczny+przepalacz+task%C3%B3w&aqs=chrome..69i57.196j0j9&sourceid=chrome&ie=UTF-8" target="_blank">Sprzęt</a></li>
+        <li><a href="https://calamari.io/" target="_blank">Urlopy</a></li>
+        <li><a href="http://clo.com.pl/" target="_blank">Delegacje</a></li>
     </ul>
 </section>
 <section id="tab_4" class="tabs">
-    <ul>
-
-    </ul>
+    <form class="profile-full" action="http://jakubswierczek.azurewebsites.net/api/users/add">
+        Zdjęcie:<br><br>
+        <input type="file" class="upload"/>
+        <table>
+            <tr>
+                <td>IMIĘ</td>
+                <td><input type="text" name="Name" class="input__underline"></td>
+            </tr>
+            <tr>
+                <td>NAZWISKO</td>
+                <td><input type="text" name="Surname" class="input__underline"></td>
+            </tr>
+            <tr>
+                <td>STANOWISKO</td>
+                <td>
+                    <select name="RoleId">
+                        <option value="1">Junior Developer</option>
+                        <option value="2">Senior Developer</option>
+                        <option value="3">Medium Developer</option>
+                        <option value="4">People</option>
+                        <option value="5">Growth</option>
+                        <option value="6">Business Management</option>
+                        <option value="7">Software Development Manager</option>
+                        <option value="8">Business Owner</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" class="addUser">
+    </form>
 </section>
