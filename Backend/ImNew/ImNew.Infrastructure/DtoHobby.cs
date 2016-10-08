@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ImNew.Infrastructure
 {
-    class DtoHobby
+    public class DtoHobby
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

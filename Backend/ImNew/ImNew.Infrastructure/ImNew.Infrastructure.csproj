@@ -54,6 +54,7 @@
     <Compile Include="DtoTechnology.cs" />
     <Compile Include="DtoUser.cs" />
     <Compile Include="DtoUserDetails.cs" />
+    <Compile Include="HobbyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleService.cs" />
     <Compile Include="TechnologyService.cs" />
