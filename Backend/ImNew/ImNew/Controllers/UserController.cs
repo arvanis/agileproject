@@ -26,6 +26,15 @@ namespace ImNew.Controllers
 			return Ok(UserService.GetAllUsers());
 		}
 
+		[Route("search")]
+		public IHttpActionResult Get([FromUri]string name, [FromUri]string surname, [FromUri]string role)
+		{
+			int roleId;
+			if (!int.TryParse(role, out roleId))
+				roleId = 0;
+			return Ok(UserService.GetUsers(name, surname, roleId));
+	    }
+
         // GET api/<controller>/5
 		[Route("{id}")]
         public IHttpActionResult Get(int id)

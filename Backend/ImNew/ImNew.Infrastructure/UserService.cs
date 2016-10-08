@@ -107,5 +107,24 @@ namespace ImNew.Infrastructure
 
 			Repository.Edit(user);
         }
-    }
+
+		public IEnumerable<DtoUser> GetUsers(string name, string surname, int role)
+		{
+			var all = Repository.GetAll();
+
+			if (!string.IsNullOrWhiteSpace(name))
+				all = all.Where(x => x.Name.Contains(name));
+			if (!string.IsNullOrWhiteSpace(surname))
+				all = all.Where(x => x.Surname.Contains(surname));
+			if (role > 0)
+				all = all.Where(x => x.RoleId == role);
+
+			return all.Select(x => new DtoUser
+			{
+				Id = x.Id,
+				Name = x.Name,
+				Surname = x.Surname
+			});
+		}
+	}
 }
