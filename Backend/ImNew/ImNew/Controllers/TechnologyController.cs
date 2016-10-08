@@ -9,8 +9,8 @@ using System.Web.Http.Cors;
 using System.Web.Http.Results;
 using ImNew.Domain.Model;
 using ImNew.Domain.Repositories;
-using ImNew.Infrastructure;
 using ImNew.Models;
+using ImNew.Services;
 
 namespace ImNew.Controllers
 {

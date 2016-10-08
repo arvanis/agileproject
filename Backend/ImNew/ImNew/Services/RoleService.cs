@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ImNew.Domain.Model;
 using ImNew.Domain.Repositories;
 
-namespace ImNew.Infrastructure
+namespace ImNew.Services
 {
 	public class RoleService
 	{

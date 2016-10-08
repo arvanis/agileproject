@@ -106,11 +106,20 @@
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\TechnologyController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DtoHobby.cs" />
+    <Compile Include="DtoRole.cs" />
+    <Compile Include="DtoTechnology.cs" />
+    <Compile Include="DtoUser.cs" />
+    <Compile Include="DtoUserDetails.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Database.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\HobbyService.cs" />
+    <Compile Include="Services\RoleService.cs" />
+    <Compile Include="Services\TechnologyService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -129,10 +138,6 @@
     <ProjectReference Include="..\ImNew.Domain\ImNew.Domain.csproj">
       <Project>{7908f02b-e553-408f-99db-d58d716765d4}</Project>
       <Name>ImNew.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ImNew.Infrastructure\ImNew.Infrastructure.csproj">
-      <Project>{7cb0b2c8-fdd0-4c27-84d8-2b32f8506b81}</Project>
-      <Name>ImNew.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,34 @@
+[
+{
+Name: "Junior Developer",
+Id: 1
+},
+{
+Name: "Senior Developer",
+Id: 2
+},
+{
+Name: "Medium Developer",
+Id: 3
+},
+{
+Name: "People",
+Id: 4
+},
+{
+Name: "Growth",
+Id: 5
+},
+{
+Name: "Business Management",
+Id: 6
+},
+{
+Name: "Software Development Manager",
+Id: 7
+},
+{
+Name: "Business Owner",
+Id: 8
+}
+]
