@@ -22,7 +22,7 @@ namespace ImNew.Controllers
 		}
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
 	        return string.Empty;
         }
