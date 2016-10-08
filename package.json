@@ -1,0 +1,49 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node 'npm-scripts/browser-sync.js'",
+    "compile-scss": "node-sass --include-path scss src/assets/scss/main.scss build/assets/main.css",
+    "autoprefixer": "postcss -u autoprefixer -r build/assets/main.css",
+    "minify:css": "postcss -u cssnano -o build/assets/main.min.css build/assets/main.css",
+    "minify": "npm run minify:css",
+    "build:css": "npm run compile-scss && npm run autoprefixer",
+    "build:html": "node node_modules/htmlcat/htmlcat.js --in src/index.html --out build/index.html && node node_modules/htmlcat/htmlcat.js --in src/404.html --out build/404.html",
+    "build:js": "uglifyjs src/assets/js/main.js --output build/assets/build.js",
+    "build:vendor": "node 'npm-scripts/build-vendor-js.js' && node 'npm-scripts/build-vendor-css.js'",
+    "build:all": "npm run build:html && npm run build:css && npm run build:js && npm run build:vendor",
+    "watch:html": "onchange src/components/*.html -- npm run build:html",
+    "watch:css": "onchange src/assets/scss/*.scss -- npm run build:css",
+    "watch:js": "onchange src/assets/js/*.js -- npm run build:js",
+    "watch:all": "parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js' 'npm run watch:html'",
+    "preinstall": "node 'npm-scripts/build-structure.js' && bower install",
+    "postinstall": "npm run build:all && npm run minify"
+  },
+  "author": "Kamil Chyrek",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.4.1",
+    "browser-sync": "^2.15.0",
+    "cpx": "^1.5.0",
+    "cssnano": "^3.7.4",
+    "htmlcat": "^1.0.3",
+    "node-sass": "^3.9.3",
+    "parallelshell": "^2.0.0",
+    "postcss": "^5.2.0",
+    "postcss-cli": "^2.5.2",
+    "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "bower": "^1.7.9",
+    "browser-sync": "^2.16.0",
+    "cssnano": "^3.7.4",
+    "htmlcat": "^1.0.3",
+    "jquery": "^3.1.0",
+    "node-sass": "^3.10.0",
+    "onchange": "^3.0.2",
+    "postcss": "^5.2.0",
+    "postcss-cli": "^2.6.0"
+  }
+}

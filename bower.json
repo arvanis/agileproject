@@ -1,0 +1,20 @@
+{
+  "name": "base",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Kamil Chyrek"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+
+  }
+}
