@@ -12,9 +12,9 @@ namespace ImNew.Domain.Repositories
 	{
 		public ImNewContext DbContext { get; }
 
-		public UserRepository()
+		public UserRepository(ImNewContext dbContext)
 		{
-			DbContext = new ImNewContext();
+			DbContext = dbContext;
 		}
 
 		public void Add(User item)
