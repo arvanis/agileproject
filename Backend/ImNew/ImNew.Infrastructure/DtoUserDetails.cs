@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace ImNew.Infrastructure
 {
-    class DtoUserDetails
+    public class DtoUserDetails
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public int ID { set; get; }
-
+        public int Id { set; get; }
 
         public List<string> Technologies { get; set; }  
                     
         public string Role { get; set; }
-        public int RoleID { get; set; }
+        public int RoleId { get; set; }
 
         public List<string> Hobbies { get; set; }
         public string About { get; set; }

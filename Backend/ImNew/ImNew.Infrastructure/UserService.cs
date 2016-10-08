@@ -57,5 +57,23 @@ namespace ImNew.Infrastructure
 				Role = user.Role.Name
 			};
 		}
+
+        public DtoUserDetails GetUserDetails(int id)
+        {
+            var user = Repository.GetSingle(id);
+            return new DtoUserDetails
+            {
+                Name = user.Name,
+                Surname = user.Surname,
+                Id = id,
+
+                Technologies = user.Techonologies.Select(x => x.Name).ToList(),
+
+                Role = user.Role.Name,
+                RoleId = user.RoleId,
+
+                Hobbies = user.Hobbies.Select(x => x.Name).ToList()
+            };
+        }
 	}
 }
