@@ -63,6 +63,7 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\TechnologyRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
