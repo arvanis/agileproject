@@ -45,5 +45,17 @@ namespace ImNew.Infrastructure
 				Role = user.Role.Name
 			});
 		}
+
+		public DtoUser GetUser(int id)
+		{
+			var user = Repository.GetSingle(id);
+			return new DtoUser
+			{
+				Name = user.Name,
+				Surname = user.Surname,
+				Id = id,
+				Role = user.Role.Name
+			};
+		}
 	}
 }

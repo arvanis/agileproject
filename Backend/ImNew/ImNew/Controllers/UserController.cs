@@ -24,7 +24,7 @@ namespace ImNew.Controllers
         // GET api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-	        return Ok();
+	        return Ok(UserService.GetUser(id));
         }
 
         // POST api/<controller>
