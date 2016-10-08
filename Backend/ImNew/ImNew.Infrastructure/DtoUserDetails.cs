@@ -9,8 +9,8 @@ namespace ImNew.Infrastructure
     class DtoUserDetails
     {
         public List<string> Technologies { get; set; }              
-        public string Postition { get; set; }
-        public string Interests { get; set; }
+        public string Role { get; set; }
+        public string Hobbies { get; set; }
         public string About { get; set; }
     }
 }
