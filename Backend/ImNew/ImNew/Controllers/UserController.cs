@@ -30,20 +30,21 @@ namespace ImNew.Controllers
 		[Route("{id}")]
         public IHttpActionResult Get(int id)
         {
-	        return Ok(UserService.GetUser(id));
+	        return Ok(UserService.GetUserDetails(id));
         }
 
         // POST api/<controller>
 		[HttpPost]
-        public void Post(DtoUserDetails value)
+        public void Post([FromBody] DtoUserDetails value)
 		{
-			
+			UserService.AddUser(value);
 		}
 
         // PUT api/<controller>/5
 		[HttpPut]
         public void Put(int id, [FromBody]DtoUserDetails value)
         {
+			UserService.EditUser(value);
         }
 
         // DELETE api/<controller>/5

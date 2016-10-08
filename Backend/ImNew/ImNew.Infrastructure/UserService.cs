@@ -89,6 +89,8 @@ namespace ImNew.Infrastructure
 
             user.Techonologies = DtoUser.Technologies.Select(x => Repository.DbContext.Techonologies.FirstOrDefault(y => y.Name == x)).ToList();
             user.Hobbies = DtoUser.Hobbies.Select(x => Repository.DbContext.Hobbies.FirstOrDefault(y => y.Name == x)).ToList();
+
+			Repository.Add(user);
         }
 
         public void EditUser(DtoUserDetails DtoUser)
@@ -102,6 +104,8 @@ namespace ImNew.Infrastructure
 
             user.Techonologies = DtoUser.Technologies.Select(x => Repository.DbContext.Techonologies.FirstOrDefault(y => y.Name == x)).ToList();
             user.Hobbies = DtoUser.Hobbies.Select(x => Repository.DbContext.Hobbies.FirstOrDefault(y => y.Name == x)).ToList();
+
+			Repository.Edit(user);
         }
     }
 }

@@ -35,5 +35,10 @@ namespace ImNew.Infrastructure
                 Name = technology.Name,
             };
         }
+		
+	    public void AddNew(string name)
+	    {
+			Repository.Add(new Techonology() {Name = name});
+	    }
     }
 }

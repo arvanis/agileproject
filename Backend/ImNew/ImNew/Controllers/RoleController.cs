@@ -23,28 +23,12 @@ namespace ImNew.Controllers
 			return Ok(RoleService.GetAllRoles());
 		}
 
-		[HttpPost]
-		[Route]
-		public IHttpActionResult Post([FromBody]string value)
+		[Route("add/{name}")]
+		[HttpGet]
+		public IHttpActionResult Post([FromUri]string name)
 		{
-			RoleService.AddRole(value);
+			RoleService.AddRole(name);
 			return Ok();
 		}
-
-		[Route("init")]
-		[HttpGet]
-		public IHttpActionResult InitData()
-	    {
-		    RoleService.AddRole("Senior Developer");
-			RoleService.AddRole("Scrum Master");
-			RoleService.AddRole("Product Owner");
-			RoleService.AddRole("Medium Developer");
-			RoleService.AddRole("People");
-			RoleService.AddRole("Growth");
-			RoleService.AddRole("Businnes Managment");
-			RoleService.AddRole("Software Development Manager");
-			RoleService.AddRole("Bussines Owner");
-		    return Ok();
-	    }
 	}
 }
