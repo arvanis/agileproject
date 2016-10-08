@@ -11,7 +11,7 @@ namespace ImNew
         public List<string> Technologies { get; set; }  
                     
         public string Role { get; set; }
-        public int RoleId { get; set; }
+        public string RoleId { get; set; }
 
         public List<string> Hobbies { get; set; }
     }

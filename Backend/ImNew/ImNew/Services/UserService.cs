@@ -67,7 +67,7 @@ namespace ImNew.Services
                 Technologies = user.Techonologies.Select(x => x.Name).ToList(),
 
                 Role = user.Role.Name,
-                RoleId = user.RoleId,
+                RoleId = user.RoleId.ToString(),
 
                 Hobbies = user.Hobbies.Select(x => x.Name).ToList()
             };
@@ -77,15 +77,18 @@ namespace ImNew.Services
         {
             var user = new User();
 
-            user.Id = DtoUser.Id;
+            //user.Id = DtoUser.Id;
             user.Name = DtoUser.Name;
             user.Surname = DtoUser.Surname;
 
-            user.Role = Repository.DbContext.Roles.FirstOrDefault(y => y.Name == DtoUser.Role);
-            //user.RoleId = DtoUser.RoleId;
+	        int roleId;
+			user.Role = int.TryParse(DtoUser.RoleId, out roleId) && roleId > 0 ? Repository.DbContext.Roles.FirstOrDefault(y => y.Id == roleId) : Repository.DbContext.Roles.FirstOrDefault(y => y.Name == DtoUser.Role);
+			//user.RoleId = DtoUser.RoleId;
 
-            user.Techonologies = DtoUser.Technologies.Select(x => Repository.DbContext.Techonologies.FirstOrDefault(y => y.Name == x)).ToList();
-            user.Hobbies = DtoUser.Hobbies.Select(x => Repository.DbContext.Hobbies.FirstOrDefault(y => y.Name == x)).ToList();
+			if(DtoUser.Technologies != null)
+				user.Techonologies = DtoUser.Technologies.Select(x => Repository.DbContext.Techonologies.FirstOrDefault(y => y.Name == x)).ToList();
+			if(DtoUser.Hobbies != null)
+				user.Hobbies = DtoUser.Hobbies.Select(x => Repository.DbContext.Hobbies.FirstOrDefault(y => y.Name == x)).ToList();
 
 			Repository.Add(user);
         }
