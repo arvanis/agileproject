@@ -57,5 +57,51 @@ namespace ImNew.Infrastructure
 				Role = user.Role.Name
 			};
 		}
-	}
+
+        public DtoUserDetails GetUserDetails(int id)
+        {
+            var user = Repository.GetSingle(id);
+            return new DtoUserDetails
+            {
+                Name = user.Name,
+                Surname = user.Surname,
+                Id = id,
+
+                Technologies = user.Techonologies.Select(x => x.Name).ToList(),
+
+                Role = user.Role.Name,
+                RoleId = user.RoleId,
+
+                Hobbies = user.Hobbies.Select(x => x.Name).ToList()
+            };
+        }
+
+        public void AddUser(DtoUserDetails DtoUser)
+        {
+            var user = new User();
+
+            user.Id = DtoUser.Id;
+            user.Name = DtoUser.Name;
+            user.Surname = DtoUser.Surname;
+
+            user.Role = Repository.DbContext.Roles.FirstOrDefault(y => y.Name == DtoUser.Role);
+            user.RoleId = DtoUser.RoleId;
+
+            user.Techonologies = DtoUser.Technologies.Select(x => Repository.DbContext.Techonologies.FirstOrDefault(y => y.Name == x)).ToList();
+            user.Hobbies = DtoUser.Hobbies.Select(x => Repository.DbContext.Hobbies.FirstOrDefault(y => y.Name == x)).ToList();
+        }
+
+        public void EditUser(DtoUserDetails DtoUser)
+        {
+            var user = Repository.GetSingle(DtoUser.Id);
+
+            user.Name = DtoUser.Name;
+            user.Surname = DtoUser.Surname;
+
+            user.Role = Repository.DbContext.Roles.FirstOrDefault(y => y.Name == DtoUser.Role);
+
+            user.Techonologies = DtoUser.Technologies.Select(x => Repository.DbContext.Techonologies.FirstOrDefault(y => y.Name == x)).ToList();
+            user.Hobbies = DtoUser.Hobbies.Select(x => Repository.DbContext.Hobbies.FirstOrDefault(y => y.Name == x)).ToList();
+        }
+    }
 }

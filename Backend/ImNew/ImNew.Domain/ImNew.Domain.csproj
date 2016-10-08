@@ -49,6 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201610081059066_InitialCreate.cs" />
+    <Compile Include="Migrations\201610081059066_InitialCreate.Designer.cs">
+      <DependentUpon>201610081059066_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Class1.cs" />
     <Compile Include="Model\Hobby.cs" />
     <Compile Include="Model\ImNewContext.cs" />
@@ -57,11 +62,18 @@
     <Compile Include="Model\Techonology.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\TechnologyRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610081059066_InitialCreate.resx">
+      <DependentUpon>201610081059066_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
