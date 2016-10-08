@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="DtoHobby.cs" />
     <Compile Include="DtoRole.cs" />
+    <Compile Include="DtoTechnology.cs" />
     <Compile Include="DtoUser.cs" />
     <Compile Include="DtoUserDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
