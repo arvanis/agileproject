@@ -1,27 +1,61 @@
 <section id="home">
     <div id="button__container">
         <div class="logo">
-            <img src="/assets/images/logo.png" alt="" class="menu__logo">
+            <img src="assets/images/logo.png" alt="" class="menu__logo">
+            <img src="assets/images/ham.png" alt="" id="trigger">
         </div>
-        <div class="workers-list__button">
-            <img src="/assets/images/search.png" alt="" class="menu__icon">
+        <div class="workers-list__button hidden" data-id="1">
+            <img src="assets/images/search.png" alt="" class="menu__icon">
             Szukaj pracownika
         </div>
-        <div class="workers-list__button">
-            <img src="/assets/images/map.png" alt="" class="menu__icon">
+        <div class="workers-list__button hidden" data-id="2">
+            <img src="assets/images/map.png" alt="" class="menu__icon">
             Mapa biura
         </div>
-        <div class="workers-list__button">
-            <img src="/assets/images/dosth.png" alt="" class="menu__icon">
+        <div class="workers-list__button hidden" data-id="3">
+            <img src="assets/images/dosth.png" alt="" class="menu__icon">
             Chcę coś załatwić
         </div>
-        <div class="workers-list__button">
-            <img src="/assets/images/about.png" alt="" class="menu__icon">
+        <div class="workers-list__button hidden" data-id="4">
+            <img src="assets/images/about.png" alt="" class="menu__icon">
             O mnie/dodaj
         </div>
     </div>
 </section>
-<section id="list">
+<section id="tab_1" class="tabs">
+    <div class="search-title">Szukam pracownika</div>
+
+    <div class="search-field">
+        <form>
+            <div>
+                <input type="text" name="firstname" class="input__underline">
+                <br>
+                <select name="job">
+                    <option value="s0"></option>
+                    <option value="s1">Developer</option>
+                    <option value="s2">Grafik</option>
+                    <option value="s3">Product Owner</option>
+                    <option value="s4">Scrum Master</option>
+                </select>
+            </div>
+            <input type="image" src="assets/images/searchbtn.png" alt="Submit Form" class="submit"/>
+        </form>
+        <div id="workers__container">
+        </div>
+    </div>
+
+</section>
+<section id="tab_2" class="tabs">
+    <ul>
+
+    </ul>
+</section>
+<section id="tab_3" class="tabs">
+    <ul>
+
+    </ul>
+</section>
+<section id="tab_4" class="tabs">
     <ul>
 
     </ul>
