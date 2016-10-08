@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ImNew.Infrastructure;
+using System.Web.Http.Results;
 
 namespace ImNew.Controllers
 {
@@ -16,9 +18,11 @@ namespace ImNew.Controllers
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return new JsonResult { Data = result };
+            var result = new DtoUser();
+
+            return Ok(result);
         }
 
         // POST api/<controller>
