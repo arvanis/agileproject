@@ -7,8 +7,8 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Results;
 using ImNew.Domain.Repositories;
-using ImNew.Infrastructure;
 using ImNew.Models;
+using ImNew.Services;
 
 namespace ImNew.Controllers
 {
@@ -26,6 +26,15 @@ namespace ImNew.Controllers
 			return Ok(UserService.GetAllUsers());
 		}
 
+		[Route("search")]
+		public IHttpActionResult Get([FromUri]string name, [FromUri]string surname, [FromUri]string role)
+		{
+			int roleId;
+			if (!int.TryParse(role, out roleId))
+				roleId = 0;
+			return Ok(UserService.GetUsers(name, surname, roleId));
+	    }
+
         // GET api/<controller>/5
 		[Route("{id}")]
         public IHttpActionResult Get(int id)
@@ -34,14 +43,16 @@ namespace ImNew.Controllers
         }
 
         // POST api/<controller>
-		[HttpPost]
-        public void Post([FromBody] DtoUserDetails value)
+		[HttpGet]
+		[Route("add")]
+        public void Post([FromUri] DtoUserDetails value)
 		{
 			UserService.AddUser(value);
 		}
 
         // PUT api/<controller>/5
 		[HttpPut]
+		[Route("{id}")]
         public void Put(int id, [FromBody]DtoUserDetails value)
         {
 			UserService.EditUser(value);
