@@ -8,35 +8,35 @@ using ImNew.Domain.Model;
 
 namespace ImNew.Domain.Repositories
 {
-    public class TechnologyRepository : IRepository<Techonology>
+    public class HobbyRepository : IRepository<Hobby>
     {
         public ImNewContext DbContext { get; }
 
-        public TechnologyRepository(ImNewContext dbContext)
+        public HobbyRepository(ImNewContext dbContext)
         {
             DbContext = dbContext;
         }
 
-        public void Add(Techonology item)
+        public void Add(Hobby item)
         {
-            DbContext.Techonologies.Add(item);
+            DbContext.Hobbies.Add(item);
             Save();
         }
 
-        public void Edit(Techonology item)
+        public void Edit(Hobby item)
         {
             DbContext.Entry(item).State = EntityState.Modified;
             Save();
         }
 
-        public IEnumerable<Techonology> GetAll()
+        public IEnumerable<Hobby> GetAll()
         {
-            return DbContext.Techonologies;
+            return DbContext.Hobbies;
         }
 
-        public Techonology GetSingle(int id)
+        public Hobby GetSingle(int id)
         {
-            return DbContext.Techonologies.FirstOrDefault(x => x.Id == id);
+            return DbContext.Hobbies.FirstOrDefault(x => x.Id == id);
         }
         private void Save()
         {
@@ -44,7 +44,4 @@ namespace ImNew.Domain.Repositories
         }
 
     }
-
-
-
 }

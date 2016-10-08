@@ -14,8 +14,8 @@ namespace ImNew
         {
             //config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             // Web API configuration and services
-
             // Web API routes
+			config.EnableCors();
             config.MapHttpAttributeRoutes();
 			var jsonFormatter = new JsonMediaTypeFormatter();
 			//optional: set serializer settings here

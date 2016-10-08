@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Results;
+using ImNew.Domain.Model;
 using ImNew.Domain.Repositories;
 using ImNew.Infrastructure;
 using ImNew.Models;
 
 namespace ImNew.Controllers
 {
-    public class TechnologyController : ApiController
+	[RoutePrefix("api/technologies")]
+	[EnableCors(headers: "*", methods: "*", origins: "*")]
+	public class TechnologyController : ApiController
     {
         // GET api/<controller>
 
@@ -29,5 +34,13 @@ namespace ImNew.Controllers
         {
             return Ok(TechnologyService.GetTechnology(id));
         }
+
+		[Route("add/{name}")]
+		[HttpGet]
+		public IHttpActionResult Post([FromUri] string name)
+	    {
+		    TechnologyService.AddNew(name);
+		    return Ok();
+	    }
     }
 }
