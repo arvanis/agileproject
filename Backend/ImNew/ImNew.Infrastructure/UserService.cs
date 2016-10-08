@@ -90,5 +90,18 @@ namespace ImNew.Infrastructure
             user.Techonologies = DtoUser.Technologies.Select(x => Repository.DbContext.Techonologies.FirstOrDefault(y => y.Name == x)).ToList();
             user.Hobbies = DtoUser.Hobbies.Select(x => Repository.DbContext.Hobbies.FirstOrDefault(y => y.Name == x)).ToList();
         }
-	}
+
+        public void EditUser(DtoUserDetails DtoUser)
+        {
+            var user = Repository.GetSingle(DtoUser.Id);
+
+            user.Name = DtoUser.Name;
+            user.Surname = DtoUser.Surname;
+
+            user.Role = Repository.DbContext.Roles.FirstOrDefault(y => y.Name == DtoUser.Role);
+
+            user.Techonologies = DtoUser.Technologies.Select(x => Repository.DbContext.Techonologies.FirstOrDefault(y => y.Name == x)).ToList();
+            user.Hobbies = DtoUser.Hobbies.Select(x => Repository.DbContext.Hobbies.FirstOrDefault(y => y.Name == x)).ToList();
+        }
+    }
 }
