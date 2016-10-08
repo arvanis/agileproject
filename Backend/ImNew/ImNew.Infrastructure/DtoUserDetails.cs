@@ -18,6 +18,7 @@ namespace ImNew.Infrastructure
         public int RoleId { get; set; }
 
         public List<string> Hobbies { get; set; }
-        public string About { get; set; }
+        public string About { get; set; }   // Not used currently
     }
 }
+  

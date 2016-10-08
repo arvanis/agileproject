@@ -75,5 +75,20 @@ namespace ImNew.Infrastructure
                 Hobbies = user.Hobbies.Select(x => x.Name).ToList()
             };
         }
+
+        public void AddUser(DtoUserDetails DtoUser)
+        {
+            var user = new User();
+
+            user.Id = DtoUser.Id;
+            user.Name = DtoUser.Name;
+            user.Surname = DtoUser.Surname;
+
+            user.Role = Repository.DbContext.Roles.FirstOrDefault(y => y.Name == DtoUser.Role);
+            user.RoleId = DtoUser.RoleId;
+
+            user.Techonologies = DtoUser.Technologies.Select(x => Repository.DbContext.Techonologies.FirstOrDefault(y => y.Name == x)).ToList();
+            user.Hobbies = DtoUser.Hobbies.Select(x => Repository.DbContext.Hobbies.FirstOrDefault(y => y.Name == x)).ToList();
+        }
 	}
 }
