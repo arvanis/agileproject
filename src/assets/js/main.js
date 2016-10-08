@@ -69,4 +69,5 @@ $(".submit").on("click", function(ev) {
 
 $(".addUser").on("click", function() {
     alert("Dodano użytkownika");
+    $('.input__underline').val('');
 })
