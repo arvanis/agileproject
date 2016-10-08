@@ -4,21 +4,27 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Results;
+using ImNew.Domain.Repositories;
+using ImNew.Infrastructure;
 
 namespace ImNew.Controllers
 {
-    public class UserController : ApiController
+	[RoutePrefix("api/users")]
+	public class UserController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+		// GET api/<controller>
+		public UserService UserService = new UserService(new UserRepository());
+		[Route("")]
+		public IHttpActionResult Get()
+		{
+			return Ok(UserService.GetAllUsers());
+		}
 
         // GET api/<controller>/5
         public string Get(int id)
         {
-            return new JsonResult { Data = result };
+	        return string.Empty;
         }
 
         // POST api/<controller>

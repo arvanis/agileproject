@@ -13,5 +13,7 @@ namespace ImNew.Domain.Repositories
 		void Add(T item);
 		void Edit(T item);
 		T GetSingle(int id);
+
+		IEnumerable<T> GetAll();
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ImNew.Domain.Model
@@ -9,5 +10,7 @@ namespace ImNew.Domain.Model
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 		public string Name { get; set; }
+
+		public virtual IList<User> Users { get; set; }
 	}
 }

@@ -8,7 +8,7 @@ using ImNew.Domain.Model;
 
 namespace ImNew.Domain.Repositories
 {
-	class UserRepository: IRepository<User>
+	public class UserRepository: IRepository<User>
 	{
 		public ImNewContext DbContext { get; }
 
@@ -33,6 +33,11 @@ namespace ImNew.Domain.Repositories
 		public User GetSingle(int id)
 		{
 			return DbContext.Users.FirstOrDefault(x => x.Id == id);
+		}
+
+		public IEnumerable<User> GetAll()
+		{
+			return DbContext.Users;
 		}
 
 		private void Save()
