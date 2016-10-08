@@ -1,0 +1,50 @@
+#button__container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+
+
+    .workers-list__button {
+        background-color: white;
+        width: 300px;
+        height: 20vh;
+        color: black;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        box-sizing: border-box;
+        border: 1px solid rgb(240,240,240);
+        box-shadow: 2px 2px 5px rgb(200,200,200);
+        margin: 5px;
+        font-family: $roboto;
+        font-size: 20px;
+        font-weight: 100;
+        border-radius: 5px;
+        padding: 10px 30px;
+
+        @include min-screen($tablet-landscape) {
+            height: 100px;
+        }
+    }
+
+    .menu__icon {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+    }
+
+    .logo {
+        width: 308px;
+        height: auto;
+        background-color: #cb0043;
+
+        .menu__logo {
+            width: 90%;
+            margin: 5%;
+        }
+    }
+}
