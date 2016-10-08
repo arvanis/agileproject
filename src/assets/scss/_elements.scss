@@ -1,3 +1,38 @@
+#home {
+    @include min-screen($tablet-landscape) {
+        display: block;
+        position: fixed;
+        left: 0;
+    }
+}
+
+#trigger {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    @include min-screen($tablet-landscape) {
+        display: none;
+    }
+}
+
+.tabs {
+    width: 320px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    @include min-screen($tablet-landscape) {
+        left: 400px;
+        width: 600px;
+        height: 100px;
+        margin-top: 10px;
+    }
+}
+
+
 #button__container {
     position: absolute;
     left: 0;
@@ -5,13 +40,12 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 300px;
+    width: 310px;
 
 
     .workers-list__button {
         background-color: white;
         width: 300px;
-        height: 20vh;
         color: black;
         display: flex;
         justify-content: left;
@@ -25,9 +59,16 @@
         font-weight: 100;
         border-radius: 5px;
         padding: 10px 30px;
+        text-decoration: none;
+        cursor: pointer;
+        height: 100px;
+    }
+
+    .hidden {
+        display: none;
 
         @include min-screen($tablet-landscape) {
-            height: 100px;
+            display: flex;
         }
     }
 
@@ -38,13 +79,100 @@
     }
 
     .logo {
-        width: 308px;
+        width: 310px;
         height: auto;
         background-color: #cb0043;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 
         .menu__logo {
-            width: 90%;
-            margin: 5%;
+            width: 200px;
+            height: 30px;
+            margin: 5% 0;
+
+            @include min-screen($tablet-landscape) {
+                height: auto;
+                width: 90%;
+                margin: 5%;
+            }
         }
     }
+}
+
+#tab_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+
+    @include min-screen($tablet-landscape) {
+        padding-top: 30px;
+    }
+}
+
+.search-title{
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.search-field {
+    width: 320px;
+    margin-top: 10px;
+
+    form {
+        width: 300px;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .input__underline {
+            width: 200px;
+            background-color: #fafafa;
+            font-size:16px;
+            border:none;
+            border-bottom:1px solid #757575;
+        }
+
+        select {
+            margin: 20px 0 0;
+        }
+    }
+
+    .submit {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.profile {
+    background-color: white;
+    width: 300px;
+    color: black;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid rgb(240,240,240);
+    box-shadow: 2px 2px 5px rgb(200,200,200);
+    margin: 5px;
+    font-family: $roboto;
+    font-size: 20px;
+    font-weight: 100;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    height: 100px;
+}
+
+.face {
+    width: 70px;
+    margin-right: 10px;
+}
+
+.role {
+    color: #cb0043;
+    font-size: 14px;
 }
