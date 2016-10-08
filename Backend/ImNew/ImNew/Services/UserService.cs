@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using ImNew.Domain.Model;
 using ImNew.Domain.Repositories;
@@ -125,6 +126,13 @@ namespace ImNew.Services
 				Name = x.Name,
 				Surname = x.Surname
 			});
+		}
+
+		public void DeleteUser(int id)
+		{
+			var user = Repository.GetSingle(id);
+			Repository.DbContext.Entry(user).State = EntityState.Deleted;
+			Repository.DbContext.SaveChanges();
 		}
 	}
 }

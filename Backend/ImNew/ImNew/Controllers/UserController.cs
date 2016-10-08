@@ -60,8 +60,10 @@ namespace ImNew.Controllers
 
         // DELETE api/<controller>/5
 		[HttpDelete]
+		[Route("delete/{id}")]
         public void Delete(int id)
-        {
-        }
+		{
+			UserService.DeleteUser(id);
+		}
     }
 }
