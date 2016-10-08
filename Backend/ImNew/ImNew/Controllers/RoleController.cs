@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using ImNew.Domain.Repositories;
 using ImNew.Infrastructure;
 using ImNew.Models;
@@ -11,6 +12,7 @@ using ImNew.Models;
 namespace ImNew.Controllers
 {
 	[RoutePrefix("api/roles")]
+	[EnableCors(headers: "*", methods: "*", origins: "*")]
 	public class RoleController : ApiController
     {
 		public RoleService RoleService = new RoleService(new RoleRepository(Database.DbContext));
@@ -37,6 +39,11 @@ namespace ImNew.Controllers
 			RoleService.AddRole("Scrum Master");
 			RoleService.AddRole("Product Owner");
 			RoleService.AddRole("Medium Developer");
+			RoleService.AddRole("People");
+			RoleService.AddRole("Growth");
+			RoleService.AddRole("Businnes Managment");
+			RoleService.AddRole("Software Development Manager");
+			RoleService.AddRole("Bussines Owner");
 		    return Ok();
 	    }
 	}

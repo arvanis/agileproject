@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Results;
 using ImNew.Domain.Repositories;
 using ImNew.Infrastructure;
@@ -12,6 +13,7 @@ using ImNew.Models;
 namespace ImNew.Controllers
 {
 	[RoutePrefix("api/users")]
+	[EnableCors(headers: "*", methods: "*", origins: "*")]
 	public class UserController : ApiController
     {
 		// GET api/<controller>

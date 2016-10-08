@@ -17,19 +17,19 @@ namespace ImNew.Infrastructure
             Repository = technologyRepository;
         }
 
-        public IEnumerable<Techonology> GetAllTechnology()
+        public IEnumerable<DtoTechnology> GetAllTechnology()
         {
-            return Repository.GetAll().Select(technology => new Techonology
+            return Repository.GetAll().Select(technology => new DtoTechnology()
             {
                 Id = technology.Id,
                 Name = technology.Name,
             });
         }
 
-        public Techonology GetTechnology(int id)
+        public DtoTechnology GetTechnology(int id)
         {
             var technology = Repository.GetSingle(id);
-            return new Techonology
+            return new DtoTechnology()
             {
                 Id = technology.Id,
                 Name = technology.Name,
