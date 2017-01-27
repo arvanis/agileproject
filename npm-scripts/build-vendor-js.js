@@ -2,7 +2,7 @@ var uglify = require('uglifyjs');
 var fs = require('fs');
 
 var files = [
-    'node_modules/jquery/dist/jquery.js',,
+    'node_modules/vue/dist/vue.js',,
 ];
 
 var result = uglify.minify(files, {
