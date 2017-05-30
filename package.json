@@ -11,7 +11,7 @@
     "minify": "npm run minify:css",
     "build:css": "npm run compile-scss && npm run autoprefixer",
     "build:html": "node node_modules/htmlcat/htmlcat.js --in src/index.html --out build/index.html && node node_modules/htmlcat/htmlcat.js --in src/404.html --out build/404.html",
-    "build:js": "uglifyjs src/assets/js/main.js --output build/assets/build.js",
+    "build:js": "node 'npm-scripts/build-app.js' && uglifyjs build/assets/build.js",
     "build:vendor": "node 'npm-scripts/build-vendor-js.js' && node 'npm-scripts/build-vendor-css.js'",
     "build:all": "npm run build:html && npm run build:css && npm run build:js && npm run build:vendor",
     "watch:html": "onchange src/components/*.html -- npm run build:html",

@@ -1,1 +1,13 @@
-
+<div>
+    <ul>
+        <li ng-repeat="category in categories">
+            <a href="#">{{category.name}}</a>
+        </li>
+    </ul>
+</div>
+<div>
+    <div ng-repeat="item in items">
+        <h1>{{item.name}}</h1>
+        <button type="button">&times;</button>
+    </div>
+</div>
